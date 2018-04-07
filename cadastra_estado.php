@@ -24,5 +24,11 @@
 		file_put_contents("estados.xml", $xml->asXML());
 	}
 	
-	echo "<h1>Enviado!!</h1>";
+	echo "<h1>Estado Cadastrado!!</h1>";
+	
+	echo "<a href='form_estado.php'>Cadastro Estado</a>";
+	echo "<br />";
+	echo "<br />";
+	
+	echo "<a href='form_cadastro.php'>Cadastro Usuario</a>";
 ?>
