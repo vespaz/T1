@@ -8,12 +8,12 @@
 	</head>
 	<body>
 		<fieldset>
-			<legend>Cadastro de usuario</legend>
+			<legend>Cadastro de Usuário</legend>
 			<?php 
 				if(empty($_POST)){
 					FormUsuario();
 				}else{
-					LerFormUsuario();
+					include "cadastro_cadastro.php";
 				}
 			?>
 		</fieldset>

@@ -1,18 +1,16 @@
-
 <?php 
 	include "funcoes.php";
 ?>
 <html>
 	<head>
 		<meta charset="UTF-8"/>
-		<title>Entrada de Dados do Estado</title>
+		<title>Entrada de Dados do Usuario</title>
 	</head>
 	<body>
 		<fieldset>
-			<legend>Gravando o Estado</legend>
+			<legend>Cadastro de Usuário</legend>
 			<?php 
- 
-				LerEstado();
+				LerCadastroUsuario();
 			?>
 		</fieldset>
 	</body>
