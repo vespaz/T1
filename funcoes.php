@@ -100,7 +100,7 @@
 			echo "Desculpe, mas inda não há Cidades cadastradas";
 			echo "<br />";
 			echo "<br />";
-			echo "<a href='form_cidadephp'>Cadastrar Cidade</a>";
+			echo "<a href='form_cidade.php'>Cadastrar Cidade</a>";
 		}
 	}
 	
