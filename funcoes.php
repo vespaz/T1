@@ -171,17 +171,22 @@
 		if(file_exists("estados.xml")){  
 			?>
 				<form action="cadastra_cidade.php" method="post">
-					<label>Escolha o estado:</label>				
-					<select name="estado">			
-						<?php						
+				
+					<label>Escolha o estado:</label>
+					
+					<select name="estado">	
+					
+						<?php	
+						
 							$xml = simplexml_load_file("estados.xml");
 							
 							foreach( $xml->Children() as $aux ){								
-								$estado = $aux->nome;
+								$uf = $aux->uf;
 								
-								echo "<option value=\"$estado\"> $estado </option>";
+								echo "<option value=\"$uf\"> $uf </option>";
 								
-							}						
+							}
+							
 						?>					
 					</select>
 					<br /><br />
