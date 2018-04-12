@@ -94,9 +94,10 @@
 									
 									foreach($xml->Children() as $aux){
 									
-										$city = $aux->nome; 
+										$city = $aux->nome;
+										$uf = $aux->estado;
 										
-										echo "<option value='$city'>$city</option>";
+										echo "<option value='$city'>$city - $uf</option>";
 										
 									}
 								}else{
