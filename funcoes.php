@@ -227,7 +227,7 @@
 		
 		$aux = $xml->addChild("cidade");
 		
-		$aux->addChild('cidade', $cidade);
+		$aux->addChild('nome', $cidade);
 		$aux->addChild('estado', $estado);
 		
 		file_put_contents("cidades.xml", $xml->asXML());
