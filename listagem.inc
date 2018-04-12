@@ -109,8 +109,7 @@
 				<th>Nome</th>
 				<th>Email</th>
 				<th>Sexo</th>
-				<th>Cidade</th>
-				<th>Estado</th>
+				<th>Localidade</th>
 			</tr>
 		
 		</thead>
