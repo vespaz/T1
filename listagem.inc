@@ -123,16 +123,14 @@
 					$nome 	= $aux->nome;
 					$email 	= $aux->email;
 					$sexo 	= $aux->sexo;
-					$city 	= $aux->city;
-					$uf 	= $aux->uf;
+					$local 	= $aux->local;
 					
 					echo "<tr>";
 					
 						echo "<td>$nome</td>";
 						echo "<td>$email</td>";
 						echo "<td>$sexo</td>";
-						echo "<td>$city</td>";
-						echo "<td>$uf</td>";
+						echo "<td>$local</td>";
 					
 					echo "</tr>";
 				}
