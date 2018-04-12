@@ -88,26 +88,16 @@
 						<label>Cidade/Estado: </label>
 						<select name="city">
 							
-							<?php 
-								if(file_exists("cidades.xml")){
-									$xml = simplexml_load_file("cidades.xml");
-									
-									foreach($xml->Children() as $aux){
-									
-										$city = $aux->nome;
-										$uf = $aux->estado;
-										
-										echo "<option value='$city'>$city - $uf</option>";
-										
-									}
-								}else{
-				
-									echo "Desculpe, mas ainda não há Cidades cadastradas";
-									echo "<br />";
-									echo "<br />";
-									
-									echo "<a href=\"form_estado.php\">Cadastrar estado</a>";
+							<?php
+								$xml = simplexml_load_file("cidades.xml");
 								
+								foreach($xml->Children() as $aux){
+								
+									$city = $aux->nome;
+									$uf = $aux->estado;
+									
+									echo "<option value='$city'>$city - $uf</option>";
+									
 								}
 							?>
 						</select>
@@ -122,6 +112,7 @@
 			echo "<br />";
 			echo "<br />";
 			echo "<a href='form_cidade.php'>Cadastrar Cidade</a>";
+			
 		}
 	}
 	
@@ -212,47 +203,53 @@
 	
 	function LerCidade(){
 		$cidade = $_POST["cidade"];
-	$estado = $_POST["estado"];
-	
-	if( !file_exists("cidades.xml") ){
+		$estado = $_POST["estado"];
 		
-		$xml = "<?xml version='1.0' encoding='UTF-8' ?>
+		if( !file_exists("cidades.xml") ){
+			
+			$xml = "<?xml version='1.0' encoding='UTF-8' ?>
+			
+			<cidades>
+				<cidade>
+					<nome>$cidade</nome>
+					<estado>$estado</estado>
+				</cidade>
+			</cidades>";
+			
+			file_put_contents("cidades.xml", $xml);
+			
+		}else{
+			
+			$xml = simplexml_load_file("cidades.xml");
+			
+			$aux = $xml->addChild("cidade");
+			
+			$aux->addChild('nome', $cidade);
+			$aux->addChild('estado', $estado);
+			
+			file_put_contents("cidades.xml", $xml->asXML());
+			
+		}
 		
-		<cidades>
-			<cidade>
-				<nome>$cidade</nome>
-				<estado>$estado</estado>
-			</cidade>
-		</cidades>";
+		echo "<h1>Cidade cadastrada com sucesso!</h1>";
 		
-		file_put_contents("cidades.xml", $xml);
+		echo "<a href=\"form_estado.php\">Cadastrar Estado</a>";
+		echo "<br />";
+		echo "<br />";
 		
-	}else{
+		echo "<a href=\"form_cidade.php\">Cadastrar outra Cidade</a>";
+		echo "<br />";
+		echo "<br />";
 		
-		$xml = simplexml_load_file("cidades.xml");
-		
-		$aux = $xml->addChild("cidade");
-		
-		$aux->addChild('nome', $cidade);
-		$aux->addChild('estado', $estado);
-		
-		file_put_contents("cidades.xml", $xml->asXML());
-		
+		echo "<a href='form_cadastro.php'>Cadastro Usuario</a>";
 	}
 	
-	echo "<h1>Cidade cadastrada com sucesso!</h1>";
-	echo "<br />";
-	echo "<br />";
-	
-	echo "<a href=\"form_estado.php\">Cadastrar Estado</a><br />";
-	echo "<br />";
-	echo "<br />";
-	
-	echo "<a href=\"form_cidade.php\">Cadastrar outra Cidade</a><br />";
-	echo "<br />";
-	echo "<br />";
-	
-	echo "<a href='form_cadastro.php'>Cadastro Usuario</a>";
+	function cabeca(){
+		?>
+		
+		<a href="form_estado.php">Cadastrar Estado</a> |
+		<a href="form_cidade.php">Cadastrar Cidade</a> |
+		<a href="form_cadastro.php">Cadastro Usuário</a>
+		<?php
 	}
-	
 ?>
