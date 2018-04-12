@@ -97,7 +97,7 @@
 										$city = $aux->nome;
 										$uf = $aux->estado;
 										
-										echo "<option value='$city'>$city - $uf</option>";
+										echo "<option data-cidade='$city' data-uf='$uf'>$city - $uf</option>";
 										
 									}
 								}else{
@@ -130,6 +130,7 @@
 		$email = $_POST["email"];
 		$sexo = $_POST["sexo"];
 		$city = $_POST["city"];
+		$uf = $_POST["uf"];
 		
 		if(!file_exists("cadastro.xml")){
 			$xml = "<?xml version='1.0' encoding='UTF-8'?>
@@ -140,6 +141,7 @@
 						<email>$email</email>
 						<sexo>$sexo</sexo>
 						<city>$city</city>
+						<uf>$uf</uf>
 					</usuario>
 				</usuarios>
 			";
@@ -153,6 +155,7 @@
 			$usuario->addChild('email', $email);
 			$usuario->addChild('sexo', $sexo);
 			$usuario->addChild('city', $city);
+			$usuario->addChild('uf', $uf);
 			
 			file_put_contents("cadastro.xml", $xml->asXML());
 		}
