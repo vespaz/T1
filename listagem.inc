@@ -1,60 +1,67 @@
 <?php
 
 	$xml = simplexml_load_file("estados.xml");
+	
 	?>
 	
-	<p>Estados</p>
+	<p>Estados cadastrados</p>
 	
-	<table>
+	<table border="1">
 	
 		<thead>
 		
 			<tr>
-				<td>Nome do Estado</td>
-				<td>Unidade da Federação</td>
+				<th>Nome do Estado</th>
+				<th>Unidade da Federação</th>
 			</tr>
 		
 		</thead>
 		
 		<tbody>
 		
-			<tr>
 				<?php
 				foreach( $xml->Children() as $aux ){
 					
-					$estados = $aux->nome;
+					$estado = $aux->nome;
 					$uf = $aux->uf;
 					
-					echo "<td>$estado</td>";
-					echo "<td>$uf</td>";
+					echo "<tr>";
+					
+						echo "<td>$estado</td>";
+						echo "<td>$uf</td>";
+					
+					echo "</tr>";
 					
 				}
 				?>
-			</tr>
+			
 		</tbody>
 	</table>
+	
+	
+	
+	
 <?php
 
 // ############################################################################################################################
 // ############################################################################################################################
 // ############################################################################################################################
 	
-?>
+	
 
-<?php
-
-	$xml = simplexml_load_file("cidade.xml");
+	$xml = simplexml_load_file("cidades.xml");
+	
 	?>
 	
-	<p>Cidades</p>
+	<p>Cidades cadastradas</p>
 	
-	<table>
+	<table border="1">
 	
 		<thead>
 		
 			<tr>
-				<td>Nome da Cidade</td>
-				<td>Estado</td>
+				<th>Nome da Cidade</th>
+				<th>Estado</th>
 			</tr>
 		
 		</thead>
@@ -64,7 +71,7 @@
 				<?php
 				foreach( $xml->Children() as $aux ){
 					
-					$cidade = $aux->cidade;
+					$cidade = $aux->nome;
 					$estado = $aux->estado;
 					
 					echo "<tr>";
@@ -79,7 +86,59 @@
 	</table>
 
 
+<?php 
 
+// ############################################################################################################################
+// ############################################################################################################################
+// ############################################################################################################################
+	
+?>
+
+<?php
+
+	$xml = simplexml_load_file("cadastro.xml");
+	?>
+	
+	<p>Pessoas cadastradas</p>
+	
+	<table border="1">
+	
+		<thead>
+		
+			<tr>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>Sexo</th>
+				<th>Cidade</th>
+				<th>Estado</th>
+			</tr>
+		
+		</thead>
+		
+		<tbody>
+		
+				<?php
+				foreach( $xml->Children() as $aux ){
+					
+					$nome 	= $aux->nome;
+					$email 	= $aux->email;
+					$sexo 	= $aux->sexo;
+					$city 	= $aux->city;
+					$uf 	= $aux->uf;
+					
+					echo "<tr>";
+					
+						echo "<td>$nome</td>";
+						echo "<td>$email</td>";
+						echo "<td>$sexo</td>";
+						echo "<td>$city</td>";
+						echo "<td>$uf</td>";
+					
+					echo "</tr>";
+				}
+				?>
+		</tbody>
+	</table>
 
 
 
