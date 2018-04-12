@@ -86,7 +86,7 @@
 						<br />
 						
 						<label>Cidade/Estado: </label>
-						<select name="city">
+						<select name="local">
 							
 							<?php
 								$xml = simplexml_load_file("cidades.xml");
@@ -96,7 +96,7 @@
 									$city = $aux->nome;
 									$uf = $aux->estado;
 									
-									echo "<option value='$city'>$city - $uf</option>";
+									echo "<option value='" . $city . " / " . $uf . "'> " . $city . " / " . $uf . "</option>";
 									
 								}
 							?>
@@ -120,7 +120,7 @@
 		$nome = $_POST["nome"];
 		$email = $_POST["email"];
 		$sexo = $_POST["sexo"];
-		$city = $_POST["city"];
+		$local = $_POST["local"];
 		
 		if(!file_exists("cadastro.xml")){
 			$xml = "<?xml version='1.0' encoding='UTF-8'?>
@@ -130,7 +130,7 @@
 						<nome>$nome</nome>
 						<email>$email</email>
 						<sexo>$sexo</sexo>
-						<city>$city</city>
+						<local>$local</local>
 					</usuario>
 				</usuarios>
 			";
@@ -143,17 +143,21 @@
 			$usuario->addChild('nome', $nome);
 			$usuario->addChild('email', $email);
 			$usuario->addChild('sexo', $sexo);
-			$usuario->addChild('city', $city);
+			$usuario->addChild('local', $local);
 			
 			file_put_contents("cadastro.xml", $xml->asXML());
 		}
 		echo "<h1>Usuario Cadastrado !!</h1>";
 		
-		echo "<a href='form_cadastro.php'>Cadastro Usuario</a>";
-		
-		echo "<br />";
-		echo "<br />";
 		echo "<a href='form_estado.php'>Cadastro Estado</a>";
+		echo "<br />";
+		echo "<br />";
+		
+		echo "<a href='form_cidade.php'>Cadastro Cidade</a>";
+		echo "<br />";
+		echo "<br />";
+		
+		echo "<a href='form_cadastro.php'>Cadastro Usuario</a>";
 	}
 	
 // ##########  Cadastrado Cidade
@@ -231,13 +235,13 @@
 			
 		}
 		
-		echo "<h1>Cidade cadastrada com sucesso!</h1>";
+		echo "<h1>Cidade Cadastrada !!</h1>";
 		
-		echo "<a href=\"form_estado.php\">Cadastrar Estado</a>";
+		echo "<a href='form_estado.php'>Cadastro Estado</a>";
 		echo "<br />";
 		echo "<br />";
 		
-		echo "<a href=\"form_cidade.php\">Cadastrar outra Cidade</a>";
+		echo "<a href='form_cidade.php'>Cadastro Cidade</a>";
 		echo "<br />";
 		echo "<br />";
 		
