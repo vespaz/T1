@@ -10,7 +10,11 @@
 		<link rel="stylesheet" href="estilos.css">		
 	</head>
 	
-	<body>	
+	<body>
+		<?php 
+			cabeca();
+		?>
+		<br /><br />
 		<fieldset>		
 			<legend>Cadastro de cidades</legend>					
 			<?php 

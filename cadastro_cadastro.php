@@ -8,6 +8,10 @@
 		<link rel="stylesheet" href="estilos.css">
 	</head>
 	<body>
+		<?php 
+			cabeca();
+		?>
+		<br /><br />
 		<fieldset>
 			<legend>Cadastro de Usuário</legend>
 			<?php 
