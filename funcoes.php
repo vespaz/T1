@@ -251,9 +251,10 @@
 	function cabeca(){
 		?>
 		
+		<a href="index.php">Pagina Inicial</a> |
 		<a href="form_estado.php">Cadastrar Estado</a> |
 		<a href="form_cidade.php">Cadastrar Cidade</a> |
-		<a href="form_cadastro.php">Cadastro Usuário</a>
+		<a href="form_cadastro.php">Cadastro Usuário</a> 
 		<?php
 	}
 ?>
