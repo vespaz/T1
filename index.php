@@ -1,3 +1,6 @@
+<?php 
+	include "funcoes.php";
+?>
 <!DOCTYPE html>
 
 <html lang="pt-br">
@@ -6,11 +9,14 @@
 
 	<meta charset="UTF-8" />
 	<title>Página inicial</title>
-
+	<link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
-
+	<?php 
+		cabeca();
+	?>
+	<br /><br />
 	<fieldset>
 	
 		<legend>Tabelas de cadastros</legend>
