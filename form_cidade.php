@@ -7,15 +7,15 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Cadastro das cidades</title>
-		<link rel="stylesheet" href="estilos.css">		
+		<link rel="stylesheet" href="estilos.css"/>		
 	</head>
 	
-	<body>
+	<body class="bodyCidade">
 		<?php 
 			cabeca();
 		?>
 		<br /><br />
-		<fieldset>		
+		<fieldset class="fieldset">		
 			<legend>Cadastro de cidades</legend>					
 			<?php 
 				if(empty($_POST)){

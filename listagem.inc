@@ -6,7 +6,7 @@
 	
 	<p>Estados cadastrados</p>
 	
-	<table border="1">
+	<table border="1" class="tabelaLista">
 	
 		<thead>
 		

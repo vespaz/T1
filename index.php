@@ -9,15 +9,15 @@
 
 	<meta charset="UTF-8" />
 	<title>Página inicial</title>
-	<link rel="stylesheet" href="estilos.css">
+	<link rel="stylesheet" href="estilos.css"/>
 </head>
 
-<body>
+<body class="bodyIndex">
 	<?php 
 		cabeca();
 	?>
 	<br /><br />
-	<fieldset>
+	<fieldset class="fieldset">
 	
 		<legend>Tabelas de cadastros</legend>
 		
@@ -28,12 +28,14 @@
 				include "listagem.inc";
 			
 			}else{
-			
+				
 				echo "Desculpe, mas ainda não é possível mostrar as tabelas por falta de dados. <br /><br />";
-				echo "<a href=\"form_estado.php\">Cadastre um Estados</a> <br /><br />";
-				echo "<a href=\"form_cidade.php\">Cadastre uma Cidade</a> <br /><br />";
-				echo "<a href=\"form_cadastro.php\">Cadastre uma Pessoa</a> <br /><br />";
-			
+				
+				echo "<p class='linkLista'>";				
+					echo "<a href=\"form_estado.php\">Cadastre um Estados</a> <br /><br />";
+					echo "<a href=\"form_cidade.php\">Cadastre uma Cidade</a> <br /><br />";
+					echo "<a href=\"form_cadastro.php\">Cadastre uma Pessoa</a> <br /><br />";
+				echo "</p>";
 			}
 		
 		?>

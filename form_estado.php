@@ -5,14 +5,14 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<title>Entrada de Dados do Estado</title>
-		<link rel="stylesheet" href="estilos.css">
+		<link rel="stylesheet" href="estilos.css"/>
 	</head>
-	<body>
+	<body class="bodyEstado">
 		<?php 
 			cabeca();
 		?>
 		<br /><br />
-		<fieldset>
+		<fieldset class="fieldset">
 			<legend>Cadastro de Estado</legend>
 			<?php 
 				if(empty($_POST)){
