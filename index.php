@@ -1,7 +1,8 @@
+<!DOCTYPE html>
+
 <?php 
 	include "funcoes.php";
 ?>
-<!DOCTYPE html>
 
 <html lang="pt-br">
 
@@ -9,7 +10,8 @@
 
 	<meta charset="UTF-8" />
 	<title>Página inicial</title>
-	<link rel="stylesheet" href="estilos.css"/>
+	<link rel="stylesheet" href="estilos.css" />
+	
 </head>
 
 <body class="bodyIndex">
@@ -17,6 +19,7 @@
 		cabeca();
 	?>
 	<br /><br />
+	
 	<fieldset class="fieldset">
 	
 		<legend>Tabelas de cadastros</legend>
@@ -29,13 +32,11 @@
 			
 			}else{
 				
-				echo "Desculpe, mas ainda não é possível mostrar as tabelas por falta de dados. <br /><br />";
+				echo "<p class='mensagemErro'>";
+					echo "Desculpe, mas ainda não é possível mostrar as tabelas por falta de dados. <br />";
+					echo "Cadastre pelo menos um Estado, uma Cidade e uma Pessoa. <br /><br />";
+				echo "</p>'";
 				
-				echo "<p class='linkLista'>";				
-					echo "<a href=\"form_estado.php\">Cadastre um Estados</a> <br /><br />";
-					echo "<a href=\"form_cidade.php\">Cadastre uma Cidade</a> <br /><br />";
-					echo "<a href=\"form_cadastro.php\">Cadastre uma Pessoa</a> <br /><br />";
-				echo "</p>";
 			}
 		
 		?>
@@ -43,3 +44,14 @@
 	</fieldset>
 
 </body>
+
+<footer>
+
+	
+	<?php
+	
+		rodape();
+	
+	?>
+
+</footer>

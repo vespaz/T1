@@ -3,7 +3,7 @@
 
 	function FormEstado(){
 		?>
-		<form action="cadastra_estado.php" method="post" class="formEstado" >
+		<form action="cadastra_estado.php" method="post" class="formEstado">
 					
 					<label>Nome do Estado: </label>
 					<input type="text" name="nome"/>
@@ -46,21 +46,8 @@
 			file_put_contents("estados.xml", $xml->asXML());
 		}
 		
-		echo "<h1>Estado Cadastrado!!</h1>";
+		echo "<h1>Estado Cadastrado!</h1>";
 		
-		echo "<p class='linkMensagem'>";
-		
-			echo "<a href='form_estado.php'>Cadastro Estado</a>";
-			echo "<br />";
-			echo "<br />";
-			
-			echo "<a href='form_cidade.php'>Cadastro Cidade</a>";
-			echo "<br />";
-			echo "<br />";
-			
-			echo "<a href='form_cadastro.php'>Cadastro Usuario</a>";
-		
-		echo "</p>";
 	}
 
 // ###########################################  Cadastrado Cidade
@@ -89,7 +76,7 @@
 					</select>
 					<br /><br />
 					
-					<label>Digite o nome da cidade: </label>
+					<label>Nome da cidade: </label>
 					<input type="text" name="cidade" /> <br /><br />
 					
 					<input type="submit" value="Enviar" />
@@ -100,13 +87,9 @@
 				}else{
 				
 					echo "<p class='mensagemErro'>";
-						echo "Desculpe, mas ainda não há Estados cadastrados";
+						echo "Desculpe, mas ainda não há Estados cadastrados. Cadastre um e volte mais tarde.";
 						echo "<br />";
 						echo "<br />";
-					echo "</p>";
-					
-					echo "<p class='linkMensagem'>";
-						echo "<a href=\"form_estado.php\">Cadastrar estado</a>";
 					echo "</p>";
 		}	
 	}
@@ -141,20 +124,7 @@
 			
 		}
 		
-		echo "<h1>Cidade Cadastrada !!</h1>";
-		
-		echo "<p class='linkMensagem'>";
-		
-			echo "<a href='form_estado.php'>Cadastro Estado</a>";
-			echo "<br />";
-			echo "<br />";
-			
-			echo "<a href='form_cidade.php'>Cadastro Cidade</a>";
-			echo "<br />";
-			echo "<br />";
-			
-			echo "<a href='form_cadastro.php'>Cadastro Usuario</a>";
-		echo "</p>";
+		echo "<h1>Cidade Cadastrada!</h1>";
 	}	
 
 	
@@ -165,54 +135,54 @@
 		if(file_exists("cidades.xml")){
 		?>
 		<form action="cadastro_cadastro.php" method="post" class="formUsuario">
+			
+			<label>Nome: </label>
+			<input type="text" name="nome"/>
+			<br />
+			<br />
+			
+			<label>Email: </label>
+			<input type="text" name="email"/>
+			<br />
+			<br />
+			
+			<p class="input">
+				<label>Sexo: </label>
+			
+				<input type="radio" name="sexo" value="Masculino" checked />Masculino
+				<input type="radio" name="sexo" value="Feminino"/>Feminino
+			</p>
+			<br />
+			<br />
+			
+			<label>Cidade / Estado: </label>
+			<select name="local">
 				
-						<label>Nome: </label>
-						<input type="text" name="nome"/>
-						<br />
-						<br />
+				<?php
+					$xml = simplexml_load_file("cidades.xml");
+					
+					foreach($xml->Children() as $aux){
+					
+						$city = $aux->nome;
+						$uf = $aux->estado;
 						
-						<label>Email: </label>
-						<input type="text" name="email"/>
-						<br />
-						<br />
+						echo "<option value='" . $city . " / " . $uf . "'> " . $city . " / " . $uf . "</option>";
 						
-						<label>Sexo: </label>
-						<input type="radio" name="sexo" value="masculino" checked />Masculino
-						<input type="radio" name="sexo" value="feminino"/>Feminino
-						<br />
-						<br />
-						
-						<label>Cidade/Estado: </label>
-						<select name="local">
-							
-							<?php
-								$xml = simplexml_load_file("cidades.xml");
-								
-								foreach($xml->Children() as $aux){
-								
-									$city = $aux->nome;
-									$uf = $aux->estado;
-									
-									echo "<option value='" . $city . " / " . $uf . "'> " . $city . " / " . $uf . "</option>";
-									
-								}
-							?>
-						</select>
-						<br />
-						<br />	
-						
-						<input type="submit" value="Enviar"/>
-					</form>
+					}
+				?>
+			</select>
+			<br />
+			<br />	
+			
+			<input type="submit" value="Enviar"/>
+		</form>
+		
 		<?php
 		}else{
 			echo "<p class='mensagemErro'>";
-				echo "Desculpe, mas inda não há Cidades cadastradas";
+				echo "Desculpe, mas ainda não há Cidades cadastradas. Cadastre uma e volte mais tarde.";
 				echo "<br />";
 				echo "<br />";
-			echo "</p>";
-			
-			echo "<p class='linkMensagem'>";
-				echo "<a href='form_cidade.php'>Cadastrar Cidade</a>";
 			echo "</p>";
 		}
 	}
@@ -248,34 +218,51 @@
 			
 			file_put_contents("cadastro.xml", $xml->asXML());
 		}
-		echo "<h1>Usuario Cadastrado !!</h1>";
-		
-		echo "<p class='linkMensagem'>";
-			echo "<a href='form_estado.php'>Cadastro Estado</a>";
-			echo "<br />";
-			echo "<br />";
-			
-			echo "<a href='form_cidade.php'>Cadastro Cidade</a>";
-			echo "<br />";
-			echo "<br />";
-			
-			echo "<a href='form_cadastro.php'>Cadastro Usuario</a>";
-			
-		echo "</p>";
+		echo "<h1>Usuário Cadastrado!</h1>";
 
 	}
 	
 	
-// ################################ function cabeca
+// ################################ function menu e rodape
 	function cabeca(){
 		?>
 		
-		<p class="linkabeca">
-			<a href="index.php">Pagina Inicial</a> |
+		<div class="menu">
+		
+			<a href="index.php">Página Inicial</a> |
 			<a href="form_estado.php">Cadastrar Estado</a> |
 			<a href="form_cidade.php">Cadastrar Cidade</a> |
-			<a href="form_cadastro.php">Cadastro Usuário</a> 
-		</p>
+			<a href="form_cadastro.php">Cadastro Pessoas</a>
+			
+		</div>
+		
 		<?php
 	}
+	
+	
+	
+	function rodape(){
+		
+		?>
+		
+		<div class="rodape">
+		
+			<p>
+			
+				Desenvolvido por: Pedro Gomes e Vinícius Monteiro <br />
+				Todos os direitos reservados &copy IFSP - Araraquara / 2018
+			
+			</p>
+		
+		</div>
+		
+		<?php
+	}
+	
 ?>
+
+
+
+
+
+

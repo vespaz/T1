@@ -4,9 +4,9 @@
 	
 	?>
 	
-	<p>Estados cadastrados</p>
+	<p class="lista">Estados cadastrados</p>
 	
-	<table border="1" class="tabelaLista">
+	<table class="tabelaLista">
 	
 		<thead>
 		
@@ -53,9 +53,9 @@
 	
 	?>
 	
-	<p>Cidades cadastradas</p>
+	<p class="lista">Cidades cadastradas</p>
 	
-	<table border="1">
+	<table class="tabelaLista">
 	
 		<thead>
 		
@@ -99,9 +99,9 @@
 	$xml = simplexml_load_file("cadastro.xml");
 	?>
 	
-	<p>Pessoas cadastradas</p>
+	<p class="lista">Pessoas cadastradas</p>
 	
-	<table border="1">
+	<table class="tabelaLista">
 	
 		<thead>
 		
@@ -136,6 +136,9 @@
 				?>
 		</tbody>
 	</table>
+	<br />
+	<br />
+	
 
 
 

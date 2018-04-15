@@ -1,12 +1,12 @@
+<!DOCTYPE html>
 <?php 
 	include "funcoes.php";
 ?>
-<!DOCTYPE html>
 
 <html lang="pt-BR">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Cadastro das cidades</title>
+		<title>Cadastro das Cidades</title>
 		<link rel="stylesheet" href="estilos.css"/>		
 	</head>
 	
@@ -16,7 +16,7 @@
 		?>
 		<br /><br />
 		<fieldset class="fieldset">		
-			<legend>Cadastro de cidades</legend>					
+			<legend>Cadastro de Cidades</legend>
 			<?php 
 				if(empty($_POST)){
 					FormCidade();
@@ -30,3 +30,14 @@
 	</body>
 
 </html>
+
+<footer>
+
+	
+	<?php
+	
+		rodape();
+	
+	?>
+
+</footer>

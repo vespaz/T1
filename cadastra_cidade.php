@@ -1,15 +1,18 @@
+<!DOCTYPE html>
 <?php 
 	include "funcoes.php";
 ?>
 <html>
 	<head>
 		<meta charset="UTF-8"/>
-		<title>Entrada de Dados do Estado</title>
+		<title>Cadastro de Cidade</title>
 		<link rel="stylesheet" href="estilos.css"/>
 	</head>
 	<body class="bodyCidade">
-		<?php 
+		<?php
+		
 			cabeca();
+			
 		?>
 		<br /><br />
 		<fieldset class="fieldset">
@@ -17,7 +20,19 @@
 			<?php 
  
 				LerCidade();
+				
 			?>
 		</fieldset>
 	</body>
 </html>
+
+<footer>
+
+	
+	<?php
+	
+		rodape();
+	
+	?>
+
+</footer>

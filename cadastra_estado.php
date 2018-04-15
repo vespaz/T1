@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 
 <?php 
 	include "funcoes.php";
@@ -5,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8"/>
-		<title>Entrada de Dados do Estado</title>
+		<title>Cadastro de Estado</title>
 		<link rel="stylesheet" href="estilos.css"/>
 	</head>
 	<body class="bodyEstado">
@@ -14,7 +15,7 @@
 		?>
 		<br /><br />
 		<fieldset class="fieldset">
-			<legend>Gravando o Estado</legend>
+			<legend>Gravando Estado</legend>
 			<?php 
  
 				LerEstado();
@@ -22,3 +23,14 @@
 		</fieldset>
 	</body>
 </html>
+
+<footer>
+
+	
+	<?php
+	
+		rodape();
+	
+	?>
+
+</footer>

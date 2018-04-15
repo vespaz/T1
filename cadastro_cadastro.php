@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <?php 
 	include "funcoes.php";
 ?>
 <html>
 	<head>
 		<meta charset="UTF-8"/>
-		<title>Entrada de Dados do Usuario</title>
+		<title>Cadastro de Pessoas</title>
 		<link rel="stylesheet" href="estilos.css"/>
 	</head>
 	<body class="bodyCadastro">
@@ -13,10 +14,21 @@
 		?>
 		<br /><br />
 		<fieldset class="fieldset">
-			<legend>Cadastro de Usuário</legend>
+			<legend>Cadastro de Pessoas</legend>
 			<?php 
 				LerCadastroUsuario();
 			?>
 		</fieldset>
 	</body>
 </html>
+
+<footer>
+
+	
+	<?php
+	
+		rodape();
+	
+	?>
+
+</footer>

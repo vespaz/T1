@@ -1,0 +1,157 @@
+body{
+
+	background-color: rgb(240, 240, 247);
+	margin: 0 auto;
+
+}
+
+legend{
+	
+	margin: 0 auto;
+	font-size: 50px;
+	
+}
+
+p.lista{
+	
+	text-align: center;
+	font-size: 35px;
+	margin: 50px auto;
+	
+}
+
+table{
+	
+	text-align: center;
+	margin: 0 auto;
+	
+}
+
+table.tabelaLista, table.tabelaLista th{
+	
+	border: 2px solid black;
+	font-size: 20px;
+	
+}
+
+table.tabelaLista{
+	
+	padding: 5px;
+	
+}
+
+table.tabelaLista th{
+	
+	padding: 30px;
+	
+}
+
+table.tabelaLista td{
+	
+	border: 1px solid black;
+	padding: 15px;
+	
+}
+
+fieldset{
+	
+	width: 70%;
+	margin: 0 auto;
+	border: 1px solid red;
+	
+}
+
+
+
+
+
+
+div.menu{
+	
+	margin: 10px auto;
+	border: 2px solid blue;
+	text-align: center;
+	font-size: 30px;
+	max-width: 700pt;
+	padding: 10px;
+	
+}
+
+div.menu a{
+	
+	color: rgb(40, 121, 210);
+	text-decoration: none;
+	padding: 5px;
+	
+}
+
+
+
+
+
+
+label, input, select, p.input{
+	
+	font-size: 30px;
+	
+}
+
+label{
+	
+	margin-right: 10px;
+	
+}
+
+option{
+	
+	text-align: center;
+	
+}
+
+
+
+.formEstado, .formCidade, .formUsuario{
+	
+	text-align: center;
+	
+}
+
+
+
+div.rodape{
+	
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 50px;
+	padding: 20px;
+	background-color: rgba(40, 121, 210, 0.3);
+	font-size: 20px;
+	border: 1px solid black;
+	
+}
+
+
+
+
+p.mensagemErro{
+	
+	font-size: 25px;
+	text-align: center;
+	color: red;
+	
+}
+
+
+
+h1{
+	
+	text-align: center;
+	
+}
+
+
+
+
+
+
+
